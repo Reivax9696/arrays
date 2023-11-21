@@ -14,15 +14,16 @@ function esPrimer($numero) {
 
 $numeros = [2, 3, 5, 7, 8, 12, 13, 14];
 
-$sumaPrimers = array_reduce($numeros, function ($acumular, $numero) {
-    if (esPrimer($numero)) {
-        return $acumular + $numero;
-    }
-    return $acumular;
-}, 0);
-
+$sumaPrimers = 0;
 
 echo "Array original: [ " . implode(", ", $numeros) . " ]<br>";
+
+foreach ($numeros as $numero) {
+    if (esPrimer($numero)) {
+        $sumaPrimers += $numero;
+    }
+}
+
 echo "Suma dels numeros primers del array: $sumaPrimers<br>";
 
 
