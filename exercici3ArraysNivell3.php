@@ -18,11 +18,12 @@ $sumaPrimers = 0;
 
 echo "Array original: [ " . implode(", ", $numeros) . " ]<br>";
 
-foreach ($numeros as $numero) {
+$sumaPrimers = array_reduce($numeros, function ($acumular, $numero) {
     if (esPrimer($numero)) {
-        $sumaPrimers += $numero;
+        return $acumular + $numero;
     }
-}
+    return $acumular;
+}, 0);
 
 echo "Suma dels numeros primers del array: $sumaPrimers<br>";
 
