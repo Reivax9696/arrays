@@ -6,7 +6,11 @@ function elevatCub($numero) {
 
 $numeros = [1, 2, 3, 4, 5];
 
-$elevatCubdnumeros = array_map('elevatCub', $numeros);
+$elevatCubdnumeros = [];
+
+foreach ($numeros as $numero) {
+    $elevatCubdnumeros[] = elevatCub($numero);
+}
 
 echo "Array original: [ " . implode(", ", $numeros) . " ]<br>";
 echo "Numeros del array elevats al cub: [ " . implode(", ", $elevatCubdnumeros) . " ]<br>";
