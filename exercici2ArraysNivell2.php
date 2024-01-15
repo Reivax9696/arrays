@@ -2,6 +2,7 @@
 
 function calcularMitjana($notas) {
     $totalClasse = 0;
+    $totalNotas = 0;
 
     foreach ($notas as $estudiant => $notaEstudiant) {
         $estudiantTotal = array_sum($notaEstudiant);
@@ -10,11 +11,10 @@ function calcularMitjana($notas) {
         echo "estudiant: $estudiant, Nota Mitjana: $estudiantMitjana<br>";
 
         $totalClasse += $estudiantTotal;
+        $totalNotas += count($notaEstudiant);
     }
 
-    $numEstudiants = count($notas);
-    $numNotesPerEstudiant = count($notaEstudiant);
-    $mitjanaClasse = $totalClasse / ($numEstudiants * $numNotesPerEstudiant);
+    $mitjanaClasse = $totalClasse / $totalNotas;
 
     echo "Nota Mitjana de la classe: $mitjanaClasse<br>";
 }
