@@ -1,15 +1,15 @@
 <?php
 
-function elevatCub($numero) {
-    return $numero ** 3;
+$arrayEnters = [1, 2, 3, 4, 5, 10, 20];
+$numero;
+
+function cub($numero){
+    return $numero * $numero * $numero;
 }
 
-$numeros = [1, 2, 3, 4, 5];
 
-$elevatCubdnumeros = array_map('elevatCub', $numeros);
+$cub = array_map('cub', $arrayEnters);
 
-echo "Array original: [ " . implode(", ", $numeros) . " ]<br>";
-echo "Numeros del array elevats al cub: [ " . implode(", ", $elevatCubdnumeros) . " ]<br>";
-
+print_r($cub);
 
 ?>
